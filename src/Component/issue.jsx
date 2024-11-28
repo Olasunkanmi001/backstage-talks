@@ -1,16 +1,20 @@
 import React from "react";
+import image1 from '../assets/images/issue_1.png'
 
-const Issue = ({ title, color, link, image }) => {
+const Issue = ({ title, color, link, images }) => {
+
+
   return (
+
     <section
       id={link.replace("#", "")}
       className={`${color} h-screen flex flex-col items-center justify-center text-white relative`}
     >
       {/* Display the Image */}
-      {image && (
+      {images && (
         <img
-          src={image}
-          alt={`${title} Cover`}
+          src={images}
+          alt={title}
           className="w-2/3 md:w-1/3 object-contain mb-6"
         />
       )}
@@ -22,7 +26,7 @@ const Issue = ({ title, color, link, image }) => {
           href={link}
           className="mt-4 inline-block text-lg underline hover:text-gray-300"
         >
-          Learn More
+          Read More
         </a>
       </div>
     </section>
